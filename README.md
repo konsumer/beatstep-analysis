@@ -4,26 +4,35 @@ It's a stm32f103 (ARM) chip, so eventually I should be able to run ArduinoIDE, m
 
 While not directly applicable, [this](https://dsgruss.com/notes/2020/10/02/keystep1.html) has a great procedure for rev-engineering the firmware.
 
+I included a few small wrapper scripts:
 
-## Procedure
+- `led_unpack.py` - extract binary firmware and an image file so you can look at the structure
+- `led_pack.py` - turn binary firmware into an .led file
+
+
+## Reversing
+
+This part isn't strictly needed, but can give some interesting insight into how it works.
 
 Download firmware from [here](https://www.arturia.com/support/downloads-manuals):
 
-```
+```bash
 wget https://dl.arturia.net/products/beatstep/firmware/BeatStep_Firmware_Update_1_2_0_3.led
 ```
 
 Extract the .led hex-file to binary:
 
+```bash
+./led_unpack.py BeatStep_Firmware_Update_1_2_0_3.led
 ```
-./deled.py BeatStep_Firmware_Update_1_2_0_3.led  BeatStep_Firmware_Update_1_2_0_3.led.bin
-```
 
-Look at memory as image:
-
-./imgmem.py BeatStep_Firmware_Update_1_2_0_3.led mem.png
-
-
-Analyze in Ghidra, Arm Cortex, Little-endian:
+Now you can analyze the `.strip.bin` file in Ghidra, Arm Cortex, Little-endian:
 
 ![arm-cortex-le](https://dsgruss.com/assets/img/keystep/5-language-selection.png)
+
+
+You can patch it, and send it back with `led_pack.py`:
+
+```bash
+./led_pack.py BeatStep_Firmware_Update_1_2_0_3.strip.bin
+```
