@@ -2,7 +2,7 @@ This is my attempt to reverse-engineer the firmware for Arturia Beatstep, and ru
 
 It uses a [stm32f103](https://www.st.com/en/microcontrollers-microprocessors/stm32f103.html) chip, with some supporting circuitry to multiplex all the buttons, leds, and knobs. It looks like they are using [hc574](https://www.ti.com/lit/ds/symlink/sn54hc574.pdf?ts=1587965539932) to multiplex rotoary-encoders. Firmware updates over sysex would be preferrable, but worse-case, I should be able to program chip. Eventually I should be able to run ArduinoIDE, micropython, or similar on it. My goal is to figure out how to write code that can run on it, send sysex to it (so I don't need to wire up a JTAG interface) and map all of it's GPIO to to it's peripherals (buttons and LEDs.) My eventual goal is to write my own sequencer for it, for a standalone device.
 
-While not directly applicable, [this](https://dsgruss.com/notes/2020/10/02/keystep1.html) has a great procedure for rev-engineering the firmware.
+While not directly applicable, [this](https://dsgruss.com/notes/2020/10/02/keystep1.html) has a great procedure for rev-engineering the firmware. [Here](https://www.youtube.com/watch?v=5Sx31YTveyk) is a video of similar.
 
 I included a few small wrapper scripts:
 
