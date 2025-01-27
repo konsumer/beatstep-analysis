@@ -31,7 +31,7 @@ Now you can analyze the `.strip.bin` file in Ghidra, Arm Cortex, Little-endian:
 ![arm-cortex-le](https://dsgruss.com/assets/img/keystep/5-language-selection.png)
 
 
-You can patch it, and send it back with `led_pack.py`:
+This currently does not work, but I will need to be able to re-encode a STM32 binary as .led file, in order to run my own code.
 
 ```bash
 ./led_pack.py BeatStep_Firmware_Update_1_2_0_3.strip.bin
