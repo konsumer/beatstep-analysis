@@ -36,3 +36,14 @@ You can patch it, and send it back with `led_pack.py`:
 ```bash
 ./led_pack.py BeatStep_Firmware_Update_1_2_0_3.strip.bin
 ```
+
+Here is the stm32f103 & what looks liek some sort of programming port:
+
+![micro](images/micro.jpg)
+
+
+Here is how it does I/O:
+
+![micro](images/io.jpg)
+
+It's using 5 [74AHC574](https://www.digikey.com/en/products/detail/texas-instruments/SN74AHC574NSR/1566887), which is a shift-register (used to multiplex in/output.)
