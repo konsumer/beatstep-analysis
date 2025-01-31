@@ -4,6 +4,8 @@ It uses a [stm32f103](https://www.st.com/en/microcontrollers-microprocessors/stm
 
 While not directly applicable, [this](https://dsgruss.com/notes/2020/10/02/keystep1.html) has a great procedure for rev-engineering the firmware. [Here](https://www.youtube.com/watch?v=5Sx31YTveyk) is a video of similar.
 
+The (what looks like) JTAG port is accessable on back, so even though I would prefer to update with .led file, that is not too bad (just open back of device.)
+
 I included a few small wrapper scripts:
 
 - `led_unpack.py` - extract binary firmware and an image file so you can look at the structure
